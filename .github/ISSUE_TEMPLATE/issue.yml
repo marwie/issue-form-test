@@ -23,17 +23,31 @@ body:
       label: What happened?
       description: Also tell us, what did you expect to happen?
       placeholder: Tell us what you see!
-      value: "A bug happened!"
+      value: ""
+    validations:
+      required: true
+  - type: dropdown
+    id: OS
+    attributes:
+      label: Operating System
+      description: Which operating system are you using?
+      options:
+        - Windows
+        - OSX
+        - Linux
     validations:
       required: true
   - type: dropdown
     id: version
     attributes:
-      label: Version
-      description: What version of our software are you running?
+      label: Unity Version
+      description: Which Unity Editor version are you using?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+        - 2020.3
+        - 2021.2
+        - 2021.3
+        - 2022.x
+        - 2023.x
     validations:
       required: true
   - type: dropdown
@@ -46,17 +60,10 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
+        - Mozilla XR
   - type: textarea
     id: logs
     attributes:
       label: Relevant log output
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
