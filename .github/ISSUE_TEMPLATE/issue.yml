@@ -9,6 +9,7 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
+        
   - type: textarea
     id: bug-description
     attributes:
@@ -17,6 +18,7 @@ body:
       placeholder: I am doing ... What I expect is ... What actually happening is ...
     validations:
       required: true
+      
   - type: input
     id: reproduction
     attributes:
@@ -25,6 +27,7 @@ body:
       placeholder: Reproduction URL
     validations:
       required: false
+      
   - type: dropdown
     id: OS
     attributes:
@@ -36,19 +39,7 @@ body:
         - Linux
     validations:
       required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Unity Version
-      description: Which Unity Editor version are you using?
-      options:
-        - 2020.3
-        - 2021.2
-        - 2021.3
-        - 2022.x
-        - 2023.x
-    validations:
-      required: true
+      
   - type: dropdown
     id: browsers
     attributes:
@@ -60,19 +51,34 @@ body:
         - Safari
         - Microsoft Edge
         - Mozilla XR
+        
+  - type: dropdown
+    id: version
+    attributes:
+      label: Editor Version
+      description: Which Unity Editor version are you using?
+      options:
+        - 2020.3
+        - 2021.3
+        - 2022.x
+        - 2023.x
+    validations:
+      required: true
+
   - type: textarea
     id: reproduction-steps
     attributes:
       label: Steps to reproduce
       description: Please provide any reproduction steps that may need to be described. E.g. if it happens only when running the dev or build script make sure it's clear which one to use.
-      placeholder: Run `npm install` followed by `npm run dev`
+      placeholder: Create a new minimal template, add _this_ script and start the server
+     
   - type: checkboxes
     id: checkboxes
     attributes:
       label: Validations
       description: Before submitting the issue, please make sure you do the following
       options:
-        - label: Follow our [Code of Conduct](https://github.com/vitejs/vite/blob/main/CODE_OF_CONDUCT.md)
+        - label: Follow our [Code of Conduct](https://github.com/needle-tools/needle-engine-support/blob/main/CODE_OF_CONDUCT.md)
           required: true
         - label: Read the [docs](https://docs.needle.tools).
           required: true
